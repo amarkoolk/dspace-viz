@@ -12,7 +12,8 @@ normals = stl_mesh.normals
 david_frame = pygeodesy.ltp.LocalCartesian(
     36.58706, # lat
     -121.75590, # lon
-    0.0 # alt
+    754.0 # alt
+    # 0.0 # alt
 )
 
 36.58706, -121.75590, 0.0
