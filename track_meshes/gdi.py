@@ -34,16 +34,12 @@ track = mesh.Mesh(np.zeros(vertices.shape[0], dtype=mesh.Mesh.dtype))
 
 new_vertices = np.zeros_like(vertices)
 for i, vector in enumerate(vertices):
-    v0_lla = tolla(david_frame, vector[0])
-    v1_lla = tolla(david_frame, vector[1])
-    v2_lla = tolla(david_frame, vector[2])
+    v0_lla = tolla(dspace_frame, vector[0])
+    v1_lla = tolla(dspace_frame, vector[1])
+    v2_lla = tolla(dspace_frame, vector[2])
 
-    v0_xyz = toxyz(dspace_frame, v0_lla)
-    v1_xyz = toxyz(dspace_frame, v1_lla)
-    v2_xyz = toxyz(dspace_frame, v2_lla)
+    track.vectors[i][0] = toxyz(david_frame, v0_lla)
+    track.vectors[i][1] = toxyz(david_frame, v1_lla)
+    track.vectors[i][2] = toxyz(david_frame, v2_lla)
 
-    track.vectors[i][0] = v0_xyz
-    track.vectors[i][1] = v1_xyz
-    track.vectors[i][2] = v2_xyz
-
-track.save(f"laguna_updated_track.stl")
+track.save(f"dspace-laguna_track2.stl")
