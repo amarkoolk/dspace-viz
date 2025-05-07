@@ -10,10 +10,12 @@ vertices = stl_mesh.vectors
 normals = stl_mesh.normals
 
 david_frame = pygeodesy.ltp.LocalCartesian(
-    36.584015, # lat
-    -121.752034, # lon
-    754.0 # alt
+    36.58706, # lat
+    -121.75590, # lon
+    0.0 # alt
 )
+
+36.58706, -121.75590, 0.0
 
 # 36.58736160181 -121.75581850179
 dspace_frame = pygeodesy.ltp.LocalCartesian(
